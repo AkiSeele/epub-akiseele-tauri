@@ -1,0 +1,19 @@
+# Rust
+/target/
+
+# Tauri
+/gen/
+/gen/schemas
+/bundle/
+
+# Environment Variables
+.env
+.env.*
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.log
