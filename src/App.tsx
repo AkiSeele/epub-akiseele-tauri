@@ -1,14 +1,13 @@
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable"
-import { FileTreePanel } from "@/components/FileTreePanel"
-import { EditorPanel } from "@/components/EditorPanel"
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable"
+import { FileTreePanel } from "@/components/panels/FileTreePanel"
+import { EditorPanel } from "@/components/panels/EditorPanel"
+import { RightPanel } from "@/components/panels/RightPanel"
+import { Toaster } from "@/components/ui/sonner"
 
 export function App() {
   return (
     <div className="h-screen w-screen overflow-hidden bg-background text-foreground">
+      <Toaster position="top-right" richColors />
       <ResizablePanelGroup direction="horizontal">
         {/* Left: File Tree */}
         <ResizablePanel defaultSize={20} minSize={15}>
@@ -17,7 +16,7 @@ export function App() {
 
         <ResizableHandle withHandle />
 
-        {/* Middle: Editor */}
+        {/* Center: Editor */}
         <ResizablePanel defaultSize={60} minSize={30}>
           <EditorPanel />
         </ResizablePanel>
@@ -26,11 +25,7 @@ export function App() {
 
         {/* Right: Properties */}
         <ResizablePanel defaultSize={20} minSize={15}>
-          <div className="flex h-full items-center justify-center border-l p-6">
-            <span className="font-semibold text-muted-foreground italic">
-              属性
-            </span>
-          </div>
+          <RightPanel />
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>

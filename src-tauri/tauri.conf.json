@@ -13,14 +13,20 @@
     "windows": [
       {
         "title": "EPUB Editor",
-        "width": 800,
-        "height": 600,
+        "width": 1000,
+        "height": 800,
         "resizable": true,
         "fullscreen": false
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src 'self' 'unsafe-inline'; img-src 'self' asset: https://asset.localhost data:; style-src 'self' 'unsafe-inline' asset: https://asset.localhost; font-src 'self' asset: https://asset.localhost; connect-src 'self' asset: https://asset.localhost;",
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "**"
+        ]
+      }
     }
   },
   "bundle": {
